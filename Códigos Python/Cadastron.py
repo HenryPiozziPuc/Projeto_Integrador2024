@@ -1,12 +1,12 @@
 import os
 from prettytable import PrettyTable
-
 # Definição da função para cadastrar um novo produto
 def cadastrar_produto():
     os.system("cls")  # Limpa a tela do console (apenas Windows)
     table = PrettyTable()
 
     print(f"\n\tCadastro de produto!")  # Mensagem de cabeçalho para o cadastro
+
     # Solicita e armazena os dados do produto inseridos pelo usuário
     global cod_prod
     cod_prod = int(input("Código do produto: "))
@@ -25,19 +25,19 @@ def cadastrar_produto():
     table.add_column(f"Custo de Compra",[custo_prod])
 
     global custo_fixo_prod
-    custo_fixo_prod = float(input("Custo fixo/administrativo: "))
+    custo_fixo_prod = float(input("Custo fixo/administrativo [%]: "))
     table.add_column(f"Custo Fixo/Administrativo",[custo_fixo_prod])
 
     global comissao_vendas
-    comissao_vendas = float(input("Comissão de vendas: "))
+    comissao_vendas = float(input("Comissão de vendas [%]: "))
     table.add_column(f"Comissão de vendas",[comissao_vendas])
 
     global imposto_prod
-    imposto_prod = float(input("Imposto sobre a venda: "))
+    imposto_prod = float(input("Imposto sobre a venda [%]: "))
     table.add_column(f"Imposto sobre a venda",[imposto_prod])
 
     global lucro_prod
-    lucro_prod = float(input("Margem de lucro em porcentagem: "))
+    lucro_prod = float(input("Margem de lucro [%]: "))
     table.add_column(f"Imposto sobre a venda",[lucro_prod])
     # Retorna os dados do produto
     print(f"\n{table}")
